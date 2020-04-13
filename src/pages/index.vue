@@ -45,19 +45,26 @@
         </v-card>
       </v-col>
     </v-row>
+    <Dialog ref="dialog" :title="title" @cancel="cancel" @confirm="confirm" />
   </v-container>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
+import Dialog from '@/components/Dialog.vue'
 
 export default defineComponent({
+  components: {
+    Dialog
+  },
   setup() {
     const result = ref(null as 'confirm' | 'cancel' | null)
 
+    const dialog = ref()
     const title = 'Example Dialog'
     const openDialog = () => {
       result.value = null
+      dialog.value.open(title)
     }
     const cancel = () => {
       result.value = 'cancel'
@@ -68,6 +75,7 @@ export default defineComponent({
 
     return {
       result,
+      dialog,
       title,
       cancel,
       confirm,
