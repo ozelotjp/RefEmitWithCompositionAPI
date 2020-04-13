@@ -1,0 +1,47 @@
+{
+  "name": "ref-emit-with-composition-api",
+  "version": "1.0.0",
+  "description": "My supreme Nuxt.js project",
+  "author": "ozelotjp",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "commit": "npx git-cz"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": "yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.4.5",
+    "@vue/composition-api": "^0.5.0",
+    "nuxt": "^2.12.2"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.6.5",
+    "@nuxtjs/eslint-config-typescript": "^1.0.2",
+    "@nuxtjs/eslint-module": "^1.1.0",
+    "babel-eslint": "^10.1.0",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-nuxt": ">=0.5.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
